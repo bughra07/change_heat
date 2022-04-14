@@ -1,0 +1,43 @@
+namespace birimvecevirmeconsoleapp        // ingilizceye  dönüştürmeyi unuttum ama onu da hallediceğim
+
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("1 - fahreneitdencelciusa " +
+                          "2 - celsiusdanfahrenida ");
+
+            string islem = Console.ReadLine(),
+                deger;
+            if (islem != "")
+            {
+                double sayi;
+                Console.Write("\nSayı girin: ");
+                deger = Console.ReadLine();
+                if (deger != "")
+                {
+                    sayi = Convert.ToDouble(deger);
+                    if (islem == "1")
+                        deger = "\n" + sayi + " fahreneita donusturulmus hali:" + (((sayi * 9) / 5 )+ 32) ;
+                    else if (islem == "2")
+                        deger = "\n" + sayi + " celsiusa donusturılmus hali:" + (((sayi - 32) / 5) *9);
+                    else
+                        deger = "böyle bir birim  çevirisi bulunmamaktadır.";
+
+
+                }
+                else
+
+                    deger = "\nSayıyı boş giremezsin";
+
+            }
+            else
+                deger = "\nBoş seçim yapmamalısın";
+
+            Console.Write(deger + "\n\n");
+        
+
+        }
+    }
+}
